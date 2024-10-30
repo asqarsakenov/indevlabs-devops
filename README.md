@@ -26,20 +26,21 @@ How to deploy istio-httpd application to existing Minikube cluster using Terrafo
 7)	Apply the Terraform configuration and deploy all resources:
 
       $ terraform apply
+  	
       INFO: Input yes and press Enter to proceed
 
-8)	In a separate terminal window, you have to start Minikube tunnel to access the Ingress IP
+9)	In a separate terminal window, you have to start Minikube tunnel to access the Ingress IP
 
       $ minikube tunnel 
 
       INFO: Terminal will request a sudo permission, cause httpd-apache requires privileged ports (80/443) to be exposed. You have to input your password.
 
-9)	Run the following command to get the IP address (EXTERNAL-IP) for the Istio Ingress Gateway:
+10)	Run the following command to get the IP address (EXTERNAL-IP) for the Istio Ingress Gateway:
 
       $ kubectl get svc -n istio-ingress istio-ingress
 
 
-10)	Go to the Minikube shell and check if the httpd server is accessible using EXTERNAL-IP
+11)	Go to the Minikube shell and check if the httpd server is accessible using EXTERNAL-IP
 
       $ minikube ssh
       $ curl http://localhost
@@ -48,7 +49,7 @@ How to deploy istio-httpd application to existing Minikube cluster using Terrafo
       INFO: Both curl command’s outputs (without brackets): 
       “<html><body><h1>It works!</h1></body></html>”
 
-11)	To destroy the deployed resources, execute:
+12)	To destroy the deployed resources, execute:
 
       $ terraform destroy
       INFO: Input yes and press Enter to proceed
