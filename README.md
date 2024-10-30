@@ -43,15 +43,19 @@ How to deploy istio-httpd application to existing Minikube cluster using Terrafo
 11)	Go to the Minikube shell and check if the httpd server is accessible using EXTERNAL-IP
 
       $ minikube ssh
+   	
       $ curl http://localhost
+   	
       $ curl -k https://localhost
 
-      INFO: Both curl command’s outputs (without brackets): 
+      INFO: Both curl command’s outputs (without brackets):
+   	
       “<html><body><h1>It works!</h1></body></html>”
 
-12)	To destroy the deployed resources, execute:
+13)	To destroy the deployed resources, execute:
 
       $ terraform destroy
+   	
       INFO: Input yes and press Enter to proceed
 
 
